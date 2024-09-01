@@ -28,6 +28,10 @@ const fs = require('fs')
 //     console.log("Renamed");
 // })
 
-fs.rm("Rahul-Async/my_bio.txt",  (err, data)=>{
-    console.log("Removed");
+// fs.rm("Rahul-Async/my_bio.txt",  (err, data)=>{
+//     console.log("Removed");
+// })
+
+fs.rmdir("Rahul-Async",(err, data)=>{
+    console.log("deleted");
 })
