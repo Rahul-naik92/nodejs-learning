@@ -20,7 +20,10 @@ const fs = require('fs')
 //     console.log("Data is appended");
 // });
 
-const latestData=fs.readFile("Rahul-Async/bio.txt", "utf-8", (err, data)=>{
-    console.log(data);
-});
-console.log(latestData);
+// const latestData=fs.readFile("Rahul-Async/bio.txt", "utf-8", (err, data)=>{
+//     console.log(data);
+// });
+// console.log(latestData);
+fs.rename("Rahul-Async/bio.txt", "Rahul-Async/my_bio.txt", (err, data)=>{
+    console.log("Renamed");
+})
