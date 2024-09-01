@@ -24,6 +24,10 @@ const fs = require('fs')
 //     console.log(data);
 // });
 // console.log(latestData);
-fs.rename("Rahul-Async/bio.txt", "Rahul-Async/my_bio.txt", (err, data)=>{
-    console.log("Renamed");
+// fs.rename("Rahul-Async/bio.txt", "Rahul-Async/my_bio.txt", (err, data)=>{
+//     console.log("Renamed");
+// })
+
+fs.rm("Rahul-Async/my_bio.txt",  (err, data)=>{
+    console.log("Removed");
 })
