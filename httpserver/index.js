@@ -13,8 +13,21 @@
 const http = require('http');
 
 const server = http.createServer((req, res)=>{
-res.end("Hello from other side rahul.");
 
+    if(req.url=="/"){
+        res.end("Hello from home side rahul.");
+    } else if(req.url=="/about"){
+
+        res.end("Hello from aboutUs side rahul.");
+
+    }else if(req.url=="/contact"){
+
+        res.end("Hello from contactUs side rahul.");
+
+    } else {
+        res.writeHead(404, {"Content-type": "text/html"});
+         res.end("404 error! Page Not found. Contact Admin");
+    }
 
 });
 
