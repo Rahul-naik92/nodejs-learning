@@ -12,3 +12,13 @@ Duplex - Stream whcih can be used to read and write operations.
 
 Transform - A type duplex stream where the output is computed based on input. 
 
+Each type of Stream is an EventsEmitter instance and throws several events at different instance of times. For example, some of the commonly used events are:
+
+data - This events is fired when there is data is avaiable to read. 
+end - This events is fired when there is no more data to read. 
+error - This events is fired when there is any error receiving or writing data. 
+finish - This event is fired when all the data has been flushed to underlying system. 
+
+
+stream.pipe() this method used to take a readable strea and connect it to a writable stream.
+
