@@ -1,0 +1,14 @@
+Nodejs.Streams
+
+Streams are objects that you read data from a source or write data to a destination in continuous fashion. In Nodejs there are four type of Streams:
+
+Streaming means listening to music or watching Video in real time, instead of downloading a file to your computer and watching it later. 
+
+Readable - Stream which is used to read operation. 
+
+Writable - Stream which is used for write operations. 
+
+Duplex - Stream whcih can be used to read and write operations. 
+
+Transform - A type duplex stream where the output is computed based on input. 
+
