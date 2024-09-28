@@ -12,21 +12,23 @@ server.on("request",(req, res)=>{
     // });
 
     const rstream = fs.createReadStream("streams.txt");
-    rstream.on('data',(chunkData)=>{
-console.log("readhing");
-        res.write(chunkData);
 
-    });
+    rstream.pipe(res);
+//     rstream.on('data',(chunkData)=>{
+// console.log("readhing");
+//         res.write(chunkData);
 
-    rstream.on('end', ()=>{
-        console.log("end");
-         res.end();
-    });
+//     });
 
-    rstream.on('error', (err)=>{
-console.log(err);
-         res.end("File not found");
-    });
+//     rstream.on('end', ()=>{
+//         console.log("end");
+//          res.end();
+//     });
+
+//     rstream.on('error', (err)=>{
+// console.log(err);
+//          res.end("File not found");
+//     });
 });
 
 server.listen(8000, "127.0.0.1", ()=>{
