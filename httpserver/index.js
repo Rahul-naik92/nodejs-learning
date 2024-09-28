@@ -11,8 +11,10 @@
 
 
 const http = require('http');
-
+const fs = require('fs');
 const server = http.createServer((req, res)=>{
+   const data= fs.readFileSync(`${__dirname}/userApi/userApi.json`, "utf-8");
+   const objetData = JSON.parse(data);
 
     if(req.url=="/"){
         res.end("Hello from home side rahul.");
@@ -24,7 +26,12 @@ const server = http.createServer((req, res)=>{
 
         res.end("Hello from contactUs side rahul.");
 
-    } else {
+    }else if(req.url=="/userApi"){
+res.writeHead(200, {"Content-type":"application/json"});
+
+res.end(objetData[2].name);
+    } 
+     else {
         res.writeHead(404, {"Content-type": "text/html"});
          res.end("404 error! Page Not found. Contact Admin");
     }
